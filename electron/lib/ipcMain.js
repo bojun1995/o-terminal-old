@@ -1,7 +1,7 @@
 const { ipcMain: ipc } = require('electron')
 const path = require('path')
 const fs = require('fs')
-const _ = require('lodash');
+const _ = require('lodash')
 
 /**
  * 发送响应信息给渲染进程
@@ -11,8 +11,8 @@ const _ = require('lodash');
  * @private
  */
 const _echo = (event, channel, data) => {
-  console.log('[ipc] [answerRenderer] result: ', {channel, data})
-  event.reply(`${channel}`, data)
+	console.log('[ipc] [answerRenderer] result: ', { channel, data })
+	event.reply(`${channel}`, data)
 }
 
 /**
@@ -21,10 +21,10 @@ const _echo = (event, channel, data) => {
  * @param callback
  */
 const answerRenderer = (channel, callback) => {
-  ipc.on(channel, async (event, param) => {
-    const result = await callback(event, channel, param)
-    _echo(event, channel, result)
-  })
+	ipc.on(channel, async (event, param) => {
+		const result = await callback(event, channel, param)
+		_echo(event, channel, result)
+	})
 }
 
 /**
@@ -34,23 +34,23 @@ const answerRenderer = (channel, callback) => {
  * @param {String} method
  */
 const getApiName = (jsname, method) => {
-  return jsname + '.' + method;
+	return jsname + '.' + method
 }
 
 /**
  * 加载所有的主程序
  */
 exports.setup = () => {
-  console.log('[electron-lib-ipc] [setup]');
-  const ipcDir = path.normalize(__dirname + '/../ipc');
-  fs.readdirSync(ipcDir).forEach(function (filename) {
-    if (path.extname(filename) === '.js' && filename !== 'index.js') {
-      const name = path.basename(filename, '.js');
-      const fileObj = require(`../ipc/${filename}`);
-      _.map(fileObj, function(fn, method) {
-        let methodName = getApiName(name, method);
-        answerRenderer(methodName, fn);
-      });
-    }
-  })
+	console.log('[electron-lib-ipc] [setup]')
+	const ipcDir = path.normalize(__dirname + '/../ipc')
+	fs.readdirSync(ipcDir).forEach(function(filename) {
+		if (path.extname(filename) === '.js' && filename !== 'index.js') {
+			const name = path.basename(filename, '.js')
+			const fileObj = require(`../ipc/${filename}`)
+			_.map(fileObj, function(fn, method) {
+				let methodName = getApiName(name, method)
+				answerRenderer(methodName, fn)
+			})
+		}
+	})
 }

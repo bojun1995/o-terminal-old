@@ -1,123 +1,123 @@
-'use strict';
+'use strict'
 
-const BaseService = require('./base');
+const BaseService = require('./base')
 
 class ExampleService extends BaseService {
-  async openLocalDir(dir) {
-    const self = this;
+	async openLocalDir(dir) {
+		const self = this
 
-    await self.ipcCall('example.openDir', dir);
+		await self.ipcCall('example.openDir', dir)
 
-    return true;
-  }
+		return true
+	}
 
-  async executeJS(str) {
-    const self = this;
-    let result = await self.ipcCall('example.executeJS', str);
-    return result;
-  }
+	async executeJS(str) {
+		const self = this
+		let result = await self.ipcCall('example.executeJS', str)
+		return result
+	}
 
-  async setShortcut(shortcutStr) {
-    const self = this;
-    let result = await self.ipcCall('example.setShortcut', shortcutStr);
-    return result;
-  }
+	async setShortcut(shortcutStr) {
+		const self = this
+		let result = await self.ipcCall('example.setShortcut', shortcutStr)
+		return result
+	}
 
-  async uploadFileToSMMS(tmpFile) {
-    const res = {
-      code: 1000,
-      message: 'unknown error',
-    };
+	async uploadFileToSMMS(tmpFile) {
+		const res = {
+			code: 1000,
+			message: 'unknown error',
+		}
 
-    try {
-      //throw new Error('Sync Error');
-      const headersObj = {
-        'Content-Type': 'multipart/form-data',
-        'Authorization': 'pHVaIfVX8kgxsEL2THTYMVzJDYY3MMZU'
-      };
-      const url = 'https://sm.ms/api/v2/upload';
-      const response = await this.app.curl(url, {
-        method: 'POST',
-        headers: headersObj,
-        files: {
-          smfile: tmpFile,
-        },
-        dataType: 'json',
-        timeout: 15000,
-      });
-      const result = response.data;
-      if (this.app.config.env === 'local') {
-        this.app.logger.info('[ExampleService] [uploadFileToSMMS]: info result:%j', result);
-      }
-      if (result.code !== 'success') {
-        this.app.logger.error('[ExampleService] [uploadFileToSMMS]: res error result:%j', result);
-      }
-      return result;
-    } catch (e) {
-      this.app.logger.error('[ExampleService] [uploadFileToSMMS]:  ERROR ', e);
-    }
+		try {
+			//throw new Error('Sync Error');
+			const headersObj = {
+				'Content-Type': 'multipart/form-data',
+				Authorization: 'pHVaIfVX8kgxsEL2THTYMVzJDYY3MMZU',
+			}
+			const url = 'https://sm.ms/api/v2/upload'
+			const response = await this.app.curl(url, {
+				method: 'POST',
+				headers: headersObj,
+				files: {
+					smfile: tmpFile,
+				},
+				dataType: 'json',
+				timeout: 15000,
+			})
+			const result = response.data
+			if (this.app.config.env === 'local') {
+				this.app.logger.info('[ExampleService] [uploadFileToSMMS]: info result:%j', result)
+			}
+			if (result.code !== 'success') {
+				this.app.logger.error('[ExampleService] [uploadFileToSMMS]: res error result:%j', result)
+			}
+			return result
+		} catch (e) {
+			this.app.logger.error('[ExampleService] [uploadFileToSMMS]:  ERROR ', e)
+		}
 
-    return res;
-  }
+		return res
+	}
 
-  async autoLaunchEnable() {
-    const callResult = await this.ipcCall('example.autoLaunchEnable');
+	async autoLaunchEnable() {
+		const callResult = await this.ipcCall('example.autoLaunchEnable')
 
-    return callResult.data;
-  }
+		return callResult.data
+	}
 
-  async autoLaunchDisable() {
-    const callResult = await this.ipcCall('example.autoLaunchDisable');
+	async autoLaunchDisable() {
+		const callResult = await this.ipcCall('example.autoLaunchDisable')
 
-    return callResult.data;
-  }
+		return callResult.data
+	}
 
-  async autoLaunchIsEnabled() {
-    const callResult = await this.ipcCall('example.autoLaunchIsEnabled');
+	async autoLaunchIsEnabled() {
+		const callResult = await this.ipcCall('example.autoLaunchIsEnabled')
 
-    return callResult.data;
-  }
+		return callResult.data
+	}
 
-  async openSoftware(softName) {
-    const callResult = await this.ipcCall('example.openSoftware', softName);
-    
-    return callResult.data;
-  }
+	async openSoftware(softName) {
+		const callResult = await this.ipcCall('example.openSoftware', softName)
 
-  async selectDir() {
-    const result = await this.ipcCall('example.selectDir');
-    if (!result.data) {
-      return '';
-    }
+		return callResult.data
+	}
 
-    return result.data;
-  }
+	async selectDir() {
+		const result = await this.ipcCall('example.selectDir')
+		if (!result.data) {
+			return ''
+		}
 
-  async testElectronApi(id = 0) {
-    await this.ipcCall('example.testElectronApi');
+		return result.data
+	}
 
-    return null;
-  }
+	async testElectronApi(id = 0) {
+		await this.ipcCall('example.testElectronApi')
 
-  async messageShow() {
-    await this.ipcCall('example.messageShow');
+		return null
+	}
 
-    return true;
-  } 
+	async messageShow() {
+		await this.ipcCall('example.messageShow')
 
-  async messageShowConfirm() {
-    await this.ipcCall('example.messageShowConfirm');
+		return true
+	}
 
-    return true;
-  }   
+	async messageShowConfirm() {
+		await this.ipcCall('example.messageShowConfirm')
 
-  async loadExtension(filePath) {
-    const self = this;
+		return true
+	}
 
-    await self.ipcCall('example.loadExtension', filePath);
+	async loadExtension(filePath) {
+		const self = this
 
-    return true;
-  }
+		await self.ipcCall('example.loadExtension', filePath)
+
+		return true
+	}
 }
 
-module.exports = ExampleService;
+module.exports = ExampleService

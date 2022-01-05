@@ -1,38 +1,37 @@
-'use strict';
+'use strict'
 
-const BaseController = require('../base');
+const BaseController = require('../base')
 
 class HomeController extends BaseController {
+	async index() {
+		const { ctx } = this
 
-  async index() {
-    const { ctx } = this;
+		const data = {
+			title: 'hello o-terminal',
+		}
 
-    const data = {
-      title: 'hello electron-egg'
-    };
+		await ctx.render('index.ejs', data)
+	}
 
-    await ctx.render('index.ejs', data);
-  }
-  
-  async hello() {
-    const { ctx } = this;
+	async hello() {
+		const { ctx } = this
 
-    const data = {
-      title: 'hello'
-    };
+		const data = {
+			title: 'hello',
+		}
 
-    this.sendSuccess(data);
-  }
+		this.sendSuccess(data)
+	}
 
-  async helloPage() {
-    const { ctx } = this;
+	async helloPage() {
+		const { ctx } = this
 
-    const data = {
-      title: 'hello'
-    };
+		const data = {
+			title: 'hello',
+		}
 
-    await ctx.render('hello.ejs', data);
-  }
+		await ctx.render('hello.ejs', data)
+	}
 }
 
-module.exports = HomeController;
+module.exports = HomeController
