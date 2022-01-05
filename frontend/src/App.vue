@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <the-layout></the-layout>
   </div>
 </template>
 
 <script>
+// comp
+import TheLayout from '@/views/base/TheLayout/index'
+
 export default {
   name: 'App',
-  components: {},
+  components: { TheLayout },
   data() {
     return {};
   },
