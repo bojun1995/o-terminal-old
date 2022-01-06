@@ -1,5 +1,5 @@
 <template>
-	<div>TheLayout</div>
+	<div class="the-layout">TheLayout</div>
 </template>
 
 <script>
@@ -16,4 +16,9 @@ export default {
 }
 </script>
 
-<style lang="scss" rel="stylesheet/scss" type="text/scss" scoped></style>
+<style lang="scss" rel="stylesheet/scss" scoped>
+.the-layout {
+  height: 100%;
+  width: 100%;
+}
+</style>

@@ -14,11 +14,15 @@ export default {
 	data() {
 		return {}
 	},
+	computed: {},
 	watch: {},
+	created() {},
+	mounted() {},
 	methods: {},
 }
 </script>
-<style>
+
+<style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
