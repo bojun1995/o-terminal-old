@@ -1,16 +1,10 @@
 <template>
-	<div id="app">
-    <the-layout></the-layout>
-	</div>
+  <div class="right-bottom-part">StatusMenuBar</div>
 </template>
 
 <script>
-// comp
-import TheLayout from '@/components/base/TheLayout/index'
-
 export default {
-  name: 'o-editor',
-  components: { TheLayout },
+  name: 'StatusMenuBar',
   data() {
     return {}
   },
@@ -23,8 +17,9 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
-#app {
-  height: 100%;
-  width: 100%;
+.right-bottom-part {
+  height: 20px;
+  @include background-color('bg-color-main');
+  @include font-color('theme-color-main')
 }
 </style>

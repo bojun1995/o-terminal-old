@@ -1,16 +1,16 @@
 <template>
-	<div id="app">
-    <the-layout></the-layout>
-	</div>
+  <div class="top-part">
+    <the-logo></the-logo>
+  </div>
 </template>
 
 <script>
 // comp
-import TheLayout from '@/components/base/TheLayout/index'
+import TheLogo from './TheLogo/index.vue'
 
 export default {
-  name: 'o-editor',
-  components: { TheLayout },
+  name: 'TopPart',
+  components: { TheLogo },
   data() {
     return {}
   },
@@ -23,8 +23,10 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
-#app {
-  height: 100%;
-  width: 100%;
+.top-part {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
 }
 </style>
