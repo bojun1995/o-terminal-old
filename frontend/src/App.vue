@@ -6,7 +6,7 @@
 
 <script>
 // comp
-import TheLayout from '@/views/base/TheLayout/index'
+import TheLayout from '@/components/base/TheLayout/index'
 
 export default {
 	name: 'App',
