@@ -11,42 +11,17 @@ module.exports = {
 			args[0].title = 'o-terminal' // 设置title
 			return args
 		})
-	},
-	css: {
-		loaderOptions: {
-			// sass: {
-			// 	additionalData: `@import "./src/styles/index.scss";`,
-			// },
-		},
-	},
-}
 
-function resolveResource(name) {
-	return path.resolve(__dirname, '../src/assets/sass/' + name)
-}
-
-function generateSassResourceLoader() {
-	let loaders = [
-		cssLoader,
-		{
-			loader: 'sass-loader',
-			options: {
-				indentedSyntax: true,
-			},
-		},
-		{
-			loader: 'sass-resources-loader',
-			options: {
-				resources: resolveResource('var.sass'),
-			},
-		},
-	]
-	if (options.extract) {
-		return ExtractTextPlugin.extract({
-			use: loaders,
-			fallback: 'vue-style-loader',
+		const oneOfsMap = config.module.rule('scss').oneOfs.store
+		oneOfsMap.forEach((item) => {
+			item
+				.use('sass-resources-loader')
+				.loader('sass-resources-loader')
+				.options({
+					// 全局变量资源路径
+					resources: './src/styles/index.scss',
+				})
+				.end()
 		})
-	} else {
-		return ['vue-style-loader'].concat(loaders)
-	}
+	},
 }
