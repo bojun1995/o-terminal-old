@@ -31,8 +31,12 @@ const config = {
 		},
 	},
 	windowsOption: {
-		width: 980,
-		height: 650,
+		height: 800,
+		width: 1250,
+		useContentSize: false,
+		frame: false,
+		hasShadow: true,
+		// transparent: true,
 		minWidth: 800,
 		minHeight: 650,
 		webPreferences: {
@@ -41,7 +45,6 @@ const config = {
 			nodeIntegration: true,
 			preload: path.join(__dirname, '../preload.js'),
 		},
-		frame: true,
 		//titleBarStyle: 'hidden'
 	},
 	egg: {
