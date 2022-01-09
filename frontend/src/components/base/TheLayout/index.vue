@@ -32,16 +32,19 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
 .the-layout {
-	height: calc(100% - 10px);
-	width: calc(100% - 10px);
+	// height: calc(100% - 10px);
+	// width: calc(100% - 10px);
+  height: 100%;
+  width: 100%;
 	position: relative;
-	left: 5px;
-	top: 5px;
+	// left: 5px;
+	// top: 5px;
 	display: flex;
-	box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.55);
+	// box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.55);
   border-radius: $appBorderRadius;
   overflow: hidden;
   @include font-color('font-color-main');
+  @include background-color('bg-color-main');
 }
 .page--container {
 	display: flex;
