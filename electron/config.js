@@ -80,7 +80,7 @@ const config = {
 		url: 'https://discuz.chat/', // Any web url
 	},
 	tray: {
-		title: 'EE程序', // 托盘显示标题
+		title: 'o-terminal', // 托盘显示标题
 		icon: '/asset/images/tray_logo.png', // 托盘图标
 	},
 }
