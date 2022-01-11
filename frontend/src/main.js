@@ -11,6 +11,8 @@ Vue.use(IpcRenderer)
 
 // style
 import '@/styles/index.scss'
+// icon
+import 'remixicon/fonts/remixicon.css'
 
 // vuex
 import store from './store'
