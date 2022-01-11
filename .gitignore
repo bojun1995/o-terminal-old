@@ -3,3 +3,5 @@ out/
 logs/
 run/
 package-lock.json
+app/public
+.idea
