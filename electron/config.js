@@ -33,19 +33,21 @@ const config = {
 	windowsOption: {
 		height: 800,
 		width: 1250,
+		minHeight: 800,
+		minWidth: 1250,
 		useContentSize: false,
+		// frame: true, CTRL+SHIFT+I
 		frame: false,
 		hasShadow: true,
-		// transparent: true,
-		minWidth: 800,
-		minHeight: 650,
+		transparent: true,
 		webPreferences: {
 			//webSecurity: false,
 			contextIsolation: false, // 设置此项为false后，才可在渲染进程中使用electron api
 			nodeIntegration: true,
 			preload: path.join(__dirname, '../preload.js'),
 		},
-		//titleBarStyle: 'hidden'
+    icon: path.join(__dirname, './assets/img/logo.png')
+		// titleBarStyle: 'hidden'
 	},
 	egg: {
 		title: 'o-terminal', // 进程的title属性标识（默认你的应用名称-英文）
@@ -77,7 +79,7 @@ const config = {
 	},
 	remoteUrl: {
 		enable: false,
-		url: 'https://discuz.chat/', // Any web url
+		url: 'https://www.github.com/', // Any web url
 	},
 	tray: {
 		title: 'o-terminal', // 托盘显示标题

@@ -1,7 +1,7 @@
 {
   "name": "o-terminal",
-  "version": "1.16.0",
-  "description": "A fast, desktop software development framework",
+  "version": "0.1.0",
+  "description": "terminal",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -46,7 +46,7 @@
       "installerHeaderIcon": "./build/icons/icon.ico",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "demo"
+      "shortcutName": "o-terminal"
     },
     "publish": [
       {

@@ -13,7 +13,7 @@ module.exports = async () => {
 	shortcut.setup()
 
 	// tray
-	tray.setup()
+	// tray.setup()
 
 	// awaken
 	awaken.setup()
