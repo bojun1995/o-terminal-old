@@ -1,16 +1,10 @@
 <template>
-	<div id="app">
-    <the-layout></the-layout>
-	</div>
+  <div class="the-bottom-group"></div>
 </template>
 
 <script>
-// comp
-import TheLayout from '@/components/base/TheLayout/index'
-
 export default {
-  name: 'o-editor',
-  components: { TheLayout },
+  name: 'TheBottomGroup',
   data() {
     return {}
   },
@@ -23,8 +17,10 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
-#app {
-  height: 100%;
+.the-bottom-group {
   width: 100%;
+  height: 100px;
+
+  background-color: #f0ff;
 }
 </style>

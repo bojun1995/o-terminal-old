@@ -1,16 +1,10 @@
 <template>
-	<div id="app">
-    <the-layout></the-layout>
-	</div>
+  <div class="the-menu-group">TheMenuGroup</div>
 </template>
 
 <script>
-// comp
-import TheLayout from '@/components/base/TheLayout/index'
-
 export default {
-  name: 'o-editor',
-  components: { TheLayout },
+  name: 'TheMenuGroup',
   data() {
     return {}
   },
@@ -23,8 +17,9 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
-#app {
-  height: 100%;
+.the-menu-group {
   width: 100%;
+  height: 200px;
+  background-color: #fff000;
 }
 </style>

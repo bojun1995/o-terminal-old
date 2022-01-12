@@ -1,16 +1,10 @@
 <template>
-	<div id="app">
-    <the-layout></the-layout>
-	</div>
+  <div class="the-terminal-group">TheTerminalGroup</div>
 </template>
 
 <script>
-// comp
-import TheLayout from '@/components/base/TheLayout/index'
-
 export default {
-  name: 'o-editor',
-  components: { TheLayout },
+  name: 'TheTerminalGroup',
   data() {
     return {}
   },
@@ -23,8 +17,12 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
-#app {
-  height: 100%;
+.the-terminal-group {
   width: 100%;
+
+  display: flex;
+  flex-grow: 1;
+
+  background-color: #000fff;
 }
 </style>

@@ -1,16 +1,10 @@
 <template>
-	<div id="app">
-    <the-layout></the-layout>
-	</div>
+  <div class="the-top-bar">TheTopBar</div>
 </template>
 
 <script>
-// comp
-import TheLayout from '@/components/base/TheLayout/index'
-
 export default {
-  name: 'o-editor',
-  components: { TheLayout },
+  name: 'TheTopBar',
   data() {
     return {}
   },
@@ -23,8 +17,9 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
-#app {
-  height: 100%;
+.the-top-bar {
+  height: 30px;
   width: 100%;
+  background-color: #59f4f5;
 }
 </style>

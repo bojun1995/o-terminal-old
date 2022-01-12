@@ -1,16 +1,12 @@
 <template>
-	<div id="app">
-    <the-layout></the-layout>
-	</div>
+  <div class="the-logo">
+    TheLogo
+  </div>
 </template>
 
 <script>
-// comp
-import TheLayout from '@/components/base/TheLayout/index'
-
 export default {
-  name: 'o-editor',
-  components: { TheLayout },
+  name: 'TheLogo',
   data() {
     return {}
   },
@@ -23,8 +19,9 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
-#app {
-  height: 100%;
+.the-logo {
   width: 100%;
+  height: 130px;
+  background-color: #fff;
 }
 </style>
