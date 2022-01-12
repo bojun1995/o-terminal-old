@@ -12,5 +12,15 @@ Vue.use(Router)
 
 export default new Router({
 	mode: 'history',
-	routes: [],
+	routes: [
+    {
+      path: '*',
+      redirect: '/TestPage/index'
+    },
+    {
+      path: '/TestPage/index',
+      name: 'TestPage',
+      component: () => import('@/views/base/TestPage/index.vue')
+    },                               
+],
 })
