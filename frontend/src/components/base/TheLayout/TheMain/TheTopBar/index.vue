@@ -21,5 +21,7 @@ export default {
   height: 30px;
   width: 100%;
   background-color: #59f4f5;
+  
+  -webkit-app-region: drag;
 }
 </style>
