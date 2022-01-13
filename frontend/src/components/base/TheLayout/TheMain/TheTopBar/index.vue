@@ -32,13 +32,19 @@ export default {
 	mounted() {},
 	methods: {
 		onMinClk() {
-      this.$ipc
-      this.$ipcCallMain
-      debugger
+      this.$ipc.send('theTopBar.minimize')
     },
-		onMaxClk() {},
-		onUnMaxClk() {},
-		onCloseClk() {},
+		onMaxClk() {
+      this.$ipc.send('theTopBar.maximize')
+      this.isMaximized = true
+    },
+		onUnMaxClk() {
+      this.$ipc.send('theTopBar.unmaximize')
+      this.isMaximized = false
+    },
+		onCloseClk() {
+      this.$ipc.send('theTopBar.close')
+    },
 	},
 }
 </script>
